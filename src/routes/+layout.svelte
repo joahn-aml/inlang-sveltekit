@@ -6,7 +6,7 @@
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import 'iconify-icon';
-	import { languageStore } from '$lib/language.js';
+	import { languageStore } from '$lib/language/language.js';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
