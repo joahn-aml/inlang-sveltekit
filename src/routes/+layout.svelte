@@ -9,17 +9,25 @@
 	import { languageStore } from '$lib/language/language.js';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	$: initials = {
+		english: 'en',
+		swedish: 'sv',
+		german: 'de'
+	}[$languageStore];
 </script>
 
 <AppBar>
-	<svelte:fragment slot="lead">Skeleton</svelte:fragment>
+	<svelte:fragment slot="lead"
+		><span class="font-extrabold tracking-tight text-2xl">Skeleton</span></svelte:fragment
+	>
 	<svelte:fragment slot="trail">
 		<div class="relative hidden lg:block">
 			<!-- trigger -->
 			<button
-				class="btn hover:variant-soft-primary"
-				use:popup={{ event: 'click', target: 'features' }}
-				><span>Explore</span><iconify-icon icon="mdi:caret-down" /></button
+				type="button"
+				class="btn-icon btn-icon-sm variant-ringed-secondary"
+				use:popup={{ event: 'click', target: 'features' }}>{initials}</button
 			>
 			<!-- popup -->
 			<div class="card shadow-xl" data-popup="features">
